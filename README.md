@@ -5,7 +5,7 @@ The widget provides a quick, at-a-glance view of your position's key metrics wit
 
 ## **Widget Preview**
 
-![Widget Screenshot](/assets/image.png)
+1
 
 ## **Features**
 
