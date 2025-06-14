@@ -46,9 +46,13 @@ async function createWidget() {
         const pnlPercent = positionData.pnl.bps / 100;
         const pnlPercentString = `${pnlPercent.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%`;
 
+        const simpleYield = (positionData.yield_a.usd || 0) + (positionData.yield_b.usd || 0);
+        const compoundedYield = (positionData.compounded_yield_a.usd || 0) + (positionData.compounded_yield_b.usd || 0);
+        const yieldString = `${formatCurrency(simpleYield)} (+${formatCurrency(compoundedYield)})`;
+
         addRow(widget, "Collateral", formatCurrency(positionData.deposited_collateral_usd.amount));
         addRow(widget, "Debt", formatCurrency(positionData.loan_funds_a.usd + positionData.loan_funds_b.usd));
-        addRow(widget, "Compounded Yield", formatCurrency(positionData.compounded_yield_a.usd + positionData.compounded_yield_b.usd));
+        addRow(widget, "Yield (Compounded)", yieldString);
         addRow(widget, "PnL", `${formatCurrency(positionData.pnl.usd)} (${pnlPercentString})`, positionData.pnl.usd >= 0 ? new Color("#30D158") : new Color("#FF453A"));
 
         widget.addSpacer();
