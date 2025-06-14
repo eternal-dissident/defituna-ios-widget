@@ -1,4 +1,4 @@
-# **Solana Position Widget for Scriptable**
+# **DefiTuna Position Widget for Scriptable**
 
 This repository contains a JavaScript script for the iOS app [Scriptable](https://scriptable.app). It creates a home screen widget to display a summary of your open liquidity pool position on the [DefiTuna](https://defituna.com/) platform on Solana.  
 The widget provides a quick, at-a-glance view of your position's key metrics without needing to open a browser.
